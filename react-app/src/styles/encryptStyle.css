@@ -1,0 +1,98 @@
+#logoutArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+section > label{
+    cursor: pointer;
+    border: none;
+  }
+section > button{
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 0 1em;
+    border-radius: 0  10px 10px 0;
+    border:none;
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--base-color);
+    background-color: var(--input-color);
+    cursor: pointer;
+}
+section > button:hover{
+    background-color: var(--quit-color);
+}
+section > button:focus{
+    background-color: var(--quit-color);
+}
+section:has(button:hover) > label{
+    background-color: var(--text-color);
+}
+section:has(button:focus) > label{
+    background-color: var(--text-color);
+}
+section > textarea{
+    background-color: var(--input-color);
+    border: 3px var(--input-color) solid;
+    border-top: none;
+    height: 100px;
+    width: 390px;
+    border-radius: 0 0 10px 10px;
+}
+section > textarea:focus-within{
+    border: 3px var(--text-color) solid;
+    border-top: none;
+    outline: none;
+}
+section:has(textarea) > label{
+    flex-shrink: 0;
+    height: 50px;
+    width: 390px;
+    border: 3px var(--accent-color) solid;
+    background-color: var(--accent-color);
+    fill: var(--base-color);
+    color: var(--base-color);
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section:has(textarea:focus) > label{
+    background-color: var(--text-color);
+    border: 3px var(--text-color) solid;
+}    
+.logOutArea, .moveArea{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 5px 0 5px;
+}
+.movingArea{
+    display: flex;
+    justify-content: center;
+}
+.logoutButton, .backButton, .historyButton{
+    width: 140px;
+}
+li {
+    background-color: var(--input-color);
+    border: var(--accent-color) solid 2px;
+    border-radius: 40px;
+    padding: 0 10px 0 10px;;
+    list-style: none;
+}
+ul {
+    border: var(--accent-color) solid 3px;
+    background-color: var(--accent-color);
+    border-radius: 20px;
+    height:40%; width:90%;
+    overflow:hidden; 
+    overflow-y:scroll;
+    overflow-wrap: break-word;
+}
