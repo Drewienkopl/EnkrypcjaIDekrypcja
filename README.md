@@ -3,13 +3,14 @@ Strona z rejestracją i logowaniem, zapisem danych do bazy PostgreSQL. Po zalogo
 
 npm run dev     (Do odpalenia Frontend)
 
-Należy najpierw stworzyć baze signup(lub inną nezwe ale trzeba wtedy zmienić:jdbc:postgresql://localhost:5432/signup)    Pomocne komendy:
+Należy najpierw stworzyć baze signup(lub inną nazwe, ale trzeba by wtedy zmienić:jdbc:postgresql://localhost:5432/signup)    
+Pomocne komendy do PostgreSQL:
 CREATE DATABASE signup;   
-\l   
-\c signup   
+\l   (wyświetla bazy)
+\c signup   (przechodzi do signup)
 \d app_user   
 SELECT * FROM app_user;   
-\x   
+\x   (zmienia na wierszowe)
 
 Front-end - JavaScript w React
 
