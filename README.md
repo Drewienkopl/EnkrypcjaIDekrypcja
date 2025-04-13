@@ -1,17 +1,6 @@
 # EnkrypcjaIDekrypcja
 Strona z rejestracją i logowaniem, zapisem danych do bazy PostgreSQL. Po zalogowaniu można zakodować i odkodować wiadomości, zakodowane wiadomości są zapisywane w bazie i tylko ten użytkownik, który te wiadomości zapisał będzie mógł je odczytać w history. Sesja po stronie serwera, bez JSONWebToken. Wszystkie zapise dane w bazie kasują się po wyłączeniu(ddl-auto: create-drop)
 
-npm run dev     (Do odpalenia Frontend)
-
-Należy najpierw stworzyć baze signup(lub inną nazwe, ale trzeba by wtedy zmienić:jdbc:postgresql://localhost:5432/signup)    
-Pomocne komendy do PostgreSQL:
-CREATE DATABASE signup;   
-\l   (wyświetla bazy)
-\c signup   (przechodzi do signup)
-\d app_user   
-SELECT * FROM app_user;   
-\x   (zmienia na wierszowe)
-
 Front-end - JavaScript w React
 
 ✅Wprowadzenie wiadomości do zaszyfrowania lub odszyfrowania
@@ -42,3 +31,27 @@ Dodatkowo:
 
 ✅Wydajność - aplikacja powinna działać szybko i płynnie.
 
+
+//
+
+//
+
+//
+
+npm run dev     (Do odpalenia Frontend)
+
+Należy najpierw stworzyć baze signup(lub inną nazwe, ale trzeba by wtedy zmienić:jdbc:postgresql://localhost:5432/signup) 
+
+Pomocne komendy do PostgreSQL:
+
+CREATE DATABASE signup;   
+
+\l   (wyświetla bazy)
+
+\c signup   (przechodzi do signup)
+
+\d app_user   
+
+SELECT * FROM app_user;   
+
+\x   (zmienia na wierszowe)
