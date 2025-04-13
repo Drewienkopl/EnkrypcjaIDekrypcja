@@ -1,5 +1,15 @@
 # EnkrypcjaIDekrypcja
-Strona z rejestracją i logowaniem, zapisem danych do bazy PostgreSQL. Po zalogowaniu można zakodować i odkodować wiadomości, zakodowane wiadomości są zapisywane w bazie i tylko ten użytkownik, który te wiadomości zapisał będzie mógł je odczytać w history. Sesja po stronie serwera, bez JSONWebToken.
+Strona z rejestracją i logowaniem, zapisem danych do bazy PostgreSQL. Po zalogowaniu można zakodować i odkodować wiadomości, zakodowane wiadomości są zapisywane w bazie i tylko ten użytkownik, który te wiadomości zapisał będzie mógł je odczytać w history. Sesja po stronie serwera, bez JSONWebToken. Wszystkie zapise dane w bazie kasują się po wyłączeniu(ddl-auto: create-drop)
+
+npm run dev     (Do odpalenia Frontend)
+
+Należy najpierw stworzyć baze signup(lub inną nezwe ale trzeba wtedy zmienić:jdbc:postgresql://localhost:5432/signup)    Pomocne komendy
+CREATE DATABASE signup;   
+\l   
+\c signup   
+\d app_user   
+SELECT * FROM app_user;   
+\x   
 
 Front-end - JavaScript w React
 
