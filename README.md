@@ -55,3 +55,33 @@ CREATE DATABASE signup;
 SELECT * FROM app_user;   
 
 \x   (zmienia na wierszowe)
+
+
+
+
+Jak Znajde czas to do zrobienia poprawa błędów:
+
+1. Ograniczenia algorytmu Bcrypt powodują, że w przypadku haseł powyżej 64 znaków może się zdarzyć sytuacja, w której algorytm przyjmie więcej niż jedno hasło jako poprawne. Warto byłoby skorzystać w tym przypadku z Argon2
+
+2. Walidacja danych powinna być realizowana przy użyciu mechanizmów oferowanych przez Spring, takich jak adnotacja @Valid, zamiast implementować ją ręcznie.
+
+3. CRITICAL - Te nagłówki powinny być po stronie frontu, ew. na reverse proxy kierującym na front:
+
+        httpServletResponse.setHeader("X-Content-Type-Options", "nosniff");
+
+        httpServletResponse.setHeader("X-Frame-Options", "DENY");
+
+        httpServletResponse.setHeader("X-XSS-Protection", "1; mode=block"); // nadal wspierane w niektórych przeglądarkach
+
+        httpServletResponse.setHeader("Referrer-Policy", "no-referrer");
+
+        httpServletResponse.setHeader("Permissions-Policy", "geolocation=(), microphone=()");
+
+        httpServletResponse.setHeader("Content-Security-Policy", "default-src 'self'; script-src 'self'; object-src 'none';");
+
+
+4. Ta walidacja musi odbywać się z wykorzystaniem Spring Security, zamiast umieszczać w każdym z endpointów:
+
+if(user == null){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+}
